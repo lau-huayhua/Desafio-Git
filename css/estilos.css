@@ -121,13 +121,10 @@ a {
 a:hover {
   color: black;
 }
-
-/*BANNER*/
-.banner {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+a:link {
+  color: #087bdf;
 }
+
 .img-d {
   width: 100%;
   height: 80%;
@@ -139,8 +136,12 @@ a:hover {
 
 /*MAIN*/
 h2 {
+  font-family: "Courgette", cursive;
+  font-size: 3rem;
+  color: #087bdf;
+  font-weight: bold;
   text-align: center;
-  font-family: "Courgette";
+  border-radius: 20px;
   padding: 20px 0;
 }
 
@@ -149,19 +150,23 @@ h2 {
   flex-direction: column;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 7px 25px -100px black;
+  cursor: pointer;
   transition: all 0.1s ease;
   width: 100%;
-  margin: 1%;
+  height: 90%;
+  justify-content: flex-end;
+  padding: 1%;
 }
 
 .producto:hover {
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
   transform: translateY(-3px);
+  -webkit-box-shadow: 12px -13px 5px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 12px -13px 5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 12px -13px 5px 0px rgba(0, 0, 0, 0.25);
 }
 .img-prod {
   width: 100%;
-  height: 80%;
+  height: 88%;
 }
 .descripcion {
   display: flex;
@@ -219,9 +224,10 @@ footer {
     "caja1 caja2 caja3 caja4"
     "caja5 caja6 caja7 caja8"
     "caja9 caja10 caja11 caja12";
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 1%;
+  gap: 2%;
+  margin: 0 5%;
 }
 .caja1 {
   grid-area: caja1;
@@ -265,11 +271,10 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  padding: 2%;
+  justify-content: space-between;
+  padding: 4%;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 7px 25px -100px black;
   transition: all 0.1s ease;
   margin: 3%;
   background: linear-gradient(
@@ -277,6 +282,13 @@ footer {
     rgba(161, 8, 24, 1) 46%,
     rgba(205, 61, 55, 1) 100%
   );
+  height: 100%;
+}
+.productos:hover {
+  transform: translateY(-3px);
+  -webkit-box-shadow: 12px -13px 5px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 12px -13px 5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 12px -13px 5px 0px rgba(0, 0, 0, 0.25);
 }
 .btn {
   width: 90%;
@@ -286,6 +298,8 @@ footer {
   text-align: center;
   background-color: #a40919;
   border-radius: 15px;
+  cursor: pointer;
+  transition: 3s;
 }
 .btn:hover {
   background-color: #cd3d37;
@@ -403,4 +417,33 @@ footer {
       "caja11 caja12";
     justify-content: space-around;
   }
+}
+/*Animacion banner*/
+
+@keyframes banner-animacion {
+  0% {
+    background-image: url(../img/banner05.jpg);
+  }
+  25% {
+    background-image: url(../img/banner05.jpg);
+  }
+  50% {
+    background-image: url(../img/banner02.JPG);
+  }
+  75% {
+    background-image: url(../img/banner03.jpg);
+  }
+  100% {
+    background-image: url(../img/banner04.jpg);
+  }
+}
+
+.banner {
+  width: 100%;
+  height: 650px;
+  background-size: cover;
+  animation-name: banner-animacion;
+  animation-iteration-count: infinite;
+  animation-duration: 15s;
+  background-image: url(../img/banner05.jpg);
 }
